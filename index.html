@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="photon.css">
+    <link rel="stylesheet" href="icons.css">
+  
+    <!-- Electron Javascript -->
+    <script src="app.js" charset="utf-8"></script>
+
+  </head>
+
+  <style>
+      .icon {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 20px;
+        color: #666;
+      }
+      </style>
+
+  <body>
+      <header class="toolbar toolbar-header">
+          <h1 class="title">Header with actions</h1>
+        
+          <div class="toolbar-actions">
+            <div class="btn-group">
+              <button class="btn btn-default">
+                <span class="icon icon-home"></span>
+              </button>
+              <button class="btn btn-default">
+                <span class="icon icon-folder"></span>
+              </button>
+              <button class="btn btn-default active">
+                <span class="icon icon-cloud"></span>
+              </button>
+              <button class="btn btn-default">
+                <span class="icon icon-popup"></span>
+              </button>
+              <button class="btn btn-default">
+                <span class="icon icon-shuffle"></span>
+              </button>
+            </div>
+        
+            <button class="btn btn-default">
+              <span class="icon icon-home icon-text"></span>
+              Filters
+            </button>
+        
+            <button class="btn btn-default btn-dropdown pull-right">
+              <span class="icon icon-megaphone"></span>
+            </button>
+          </div>
+        </header>
+        
+        ...
+        
+        <footer class="toolbar toolbar-footer">
+          <div class="toolbar-actions">
+            <button class="btn btn-default">
+              Cancel
+            </button>
+        
+            <button class="btn btn-primary pull-right">
+              Save
+            </button>
+          </div>
+        </footer>
+
+    <h1>Hello World!</h1>
+    
+
+    <div class="clock"></div>
+
+    
+    
+    <script>
+      function clock() {// We create a new Date object and assign it to a variable called "time".
+        var time = new Date(),
+    
+        // Access the "getHours" method on the Date object with the dot accessor.
+        hours = time.getHours(),
+    
+        // Access the "getMinutes" method with the dot accessor.
+        minutes = time.getMinutes(),
+    
+    
+        seconds = time.getSeconds();
+
+        document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+  
+        function harold(standIn) {
+          if (standIn < 10) {
+            standIn = '0' + standIn
+          }
+          return standIn;
+        }
+      } 
+
+      setInterval(clock, 1000);
+      
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      require('../image.html')
+    </script>
+  
+  </body>
+</html>
